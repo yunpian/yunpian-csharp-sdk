@@ -20,7 +20,7 @@ var param = new Dictionary<string, string>
                 [Const.Text] = "【云片网】您的验证码是1234"
             };
 var r = clnt.Sms().SingleSend(param);
-//获取返回结果, 返回码:r.Code, 返回码描述:r.Msg, API结果:r.Data,其他说明:r.Detail, 调用异常:r.E
+//获取返回结果, 返回码:r.Code, 返回码描述:r.Msg, API结果:r.Data, 其他说明:r.Detail, 调用异常:r.E
 
 //账户:clnt.User().* 签名:clnt.Sign().* 模版:clnt.Tpl().* 短信:clnt.Sms().* 视频短信:clnt.VideoSms().* 语音:clnt.Voice().* 短链接:clnt.ShortUrl().*
 
@@ -31,7 +31,7 @@ clnt.Dispose();
 ## 配置说明
 
 - 自定义配置
-	- 使用构造器 `new YunpianClient(String apikey,Dictionary<string, string> props)`
+	- 使用构造器 `new YunpianClient(string apikey,Dictionary<string, string> props)`
 	- props内容参考YunpianConf
 
 ## 源码说明
