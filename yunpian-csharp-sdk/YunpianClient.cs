@@ -73,7 +73,7 @@ namespace Yunpian.Sdk
             var content = new StringContent(data, Encoding.GetEncoding(charset),
                 "application/x-www-form-urlencoded"); //FormUrlEncodedContent
             content.Headers.ContentEncoding.Add(charset);
-            using (var message = await _clnt.PostAsync(uri, content))
+            using (var message = await _clnt.PostAsync(uri, content).ConfigureAwait(false))
             {
                 return await message.Content.ReadAsStringAsync();
             }
@@ -84,7 +84,7 @@ namespace Yunpian.Sdk
             if (charset == null)
                 charset = _conf.Get(Const.HttpCharset, Const.HttpCharsetDefault);
             data.Headers.ContentEncoding.Add(charset);
-            using (var message = await _clnt.PostAsync(uri, data))
+            using (var message = await _clnt.PostAsync(uri, data).ConfigureAwait(false))
             {
                 return await message.Content.ReadAsStringAsync();
             }
