@@ -57,6 +57,11 @@ clnt.Dispose();
 #### Linux/Mac
  - 需要 `Mono 3.12` 及以上.
 
+## 运行环境 
+### Windows
+- 需要`NET Standard 2.0 框架`  以上
+
+
 ## 联系我们
 [云片支持 QQ](https://static.meiqia.com/dist/standalone.html?eid=30951&groupid=0d20ab23ab4702939552b3f81978012f&metadata={"name":"github"})
 
