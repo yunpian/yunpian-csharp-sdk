@@ -48,6 +48,14 @@ clnt.Dispose();
 	- 在TestYunpianApi定义TestApikey,然后执行测试工程Api/里的单元测试
 - YunpianClient使用单例方式，不要每次new
 - 分支说明: master是发布版本,develop是待发布的分支(开源贡献可以pull request到develop)
+## 环境要求
+
+#### Windows
+ - 需要`.NET 2.0` 及以上. 
+ - 需要 `Visual Studio 2010`及以上.
+
+#### Linux/Mac
+ - 需要 `Mono 3.12` 及以上.
 
 ## 联系我们
 [云片支持 QQ](https://static.meiqia.com/dist/standalone.html?eid=30951&groupid=0d20ab23ab4702939552b3f81978012f&metadata={"name":"github"})
