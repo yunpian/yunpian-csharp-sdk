@@ -16,6 +16,7 @@ namespace Yunpian.Sdk
         static ConnectionFactory()
         {
             _defaultClient.Timeout = TimeSpan.FromSeconds(30);
+            _defaultClient.DefaultRequestHeaders.Add("Api-Lang", "csharp");
         }
         public ConnectionFactory(YunpianOptions options):this(options,_defaultClient)
         {

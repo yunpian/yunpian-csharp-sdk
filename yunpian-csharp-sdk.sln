@@ -5,15 +5,17 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yunpian-csharp-sdk", "yunpian-csharp-sdk\yunpian-csharp-sdk.csproj", "{74C3A456-9597-4ACB-A6F6-F8CB552AC1DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yunpian-csharp-sdk-test", "yunpian-csharp-sdk-test\yunpian-csharp-sdk-test.csproj", "{D071A3AA-F3C3-4B4B-8ED1-09955AC1E400}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{36A3E9F7-62E5-416C-8532-B61671D8FD89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsWebApp", "samples\SmsWebApp\SmsWebApp.csproj", "{A5F28A88-4233-4669-A38C-CA7C0486445B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmsWebApp", "samples\SmsWebApp\SmsWebApp.csproj", "{A5F28A88-4233-4669-A38C-CA7C0486445B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1BFE85EA-218D-4A4A-A98E-C4E29EEA9491}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yunpian.Sdk.AspNetCore", "src\Yunpian.Sdk.AspNetCore\Yunpian.Sdk.AspNetCore.csproj", "{B341D000-E434-4725-870B-FDACFACB10E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yunpian.Sdk.AspNetCore", "src\Yunpian.Sdk.AspNetCore\Yunpian.Sdk.AspNetCore.csproj", "{B341D000-E434-4725-870B-FDACFACB10E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A86AA733-F95C-4C5C-BF55-6941575766BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yunpian-csharp-sdk-test", "test\yunpian-csharp-sdk-test\yunpian-csharp-sdk-test.csproj", "{BD751689-DB02-4FDB-9A43-3F29F4A57B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +28,6 @@ Global
 		{74C3A456-9597-4ACB-A6F6-F8CB552AC1DB}.Debug|Any CPU.Deploy.0 = Release|Any CPU
 		{74C3A456-9597-4ACB-A6F6-F8CB552AC1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74C3A456-9597-4ACB-A6F6-F8CB552AC1DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D071A3AA-F3C3-4B4B-8ED1-09955AC1E400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D071A3AA-F3C3-4B4B-8ED1-09955AC1E400}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D071A3AA-F3C3-4B4B-8ED1-09955AC1E400}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D071A3AA-F3C3-4B4B-8ED1-09955AC1E400}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5F28A88-4233-4669-A38C-CA7C0486445B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5F28A88-4233-4669-A38C-CA7C0486445B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F28A88-4233-4669-A38C-CA7C0486445B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +36,10 @@ Global
 		{B341D000-E434-4725-870B-FDACFACB10E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B341D000-E434-4725-870B-FDACFACB10E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B341D000-E434-4725-870B-FDACFACB10E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD751689-DB02-4FDB-9A43-3F29F4A57B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD751689-DB02-4FDB-9A43-3F29F4A57B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD751689-DB02-4FDB-9A43-3F29F4A57B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD751689-DB02-4FDB-9A43-3F29F4A57B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +47,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A5F28A88-4233-4669-A38C-CA7C0486445B} = {36A3E9F7-62E5-416C-8532-B61671D8FD89}
 		{B341D000-E434-4725-870B-FDACFACB10E6} = {1BFE85EA-218D-4A4A-A98E-C4E29EEA9491}
+		{BD751689-DB02-4FDB-9A43-3F29F4A57B2F} = {A86AA733-F95C-4C5C-BF55-6941575766BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE74CB54-6BCE-44D1-BF1F-7AA63476E81E}

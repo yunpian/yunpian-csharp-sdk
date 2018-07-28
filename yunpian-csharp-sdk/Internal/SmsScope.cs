@@ -46,5 +46,10 @@ namespace Yunpian.Sdk.Internal
             return model;
 
         }
+
+        public Task<SmsBatchSend> SendBatchSmsAsync(BatchSmsParameter parameter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

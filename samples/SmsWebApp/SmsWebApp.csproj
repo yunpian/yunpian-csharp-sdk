@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\yunpian-csharp-sdk\yunpian-csharp-sdk.csproj" />
+  </ItemGroup>
+
 </Project>
