@@ -1,21 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <LangVersion>latest</LangVersion>
+      <RootNamespace>Yunpian.Sdk</RootNamespace>
+      <!--<AssemblyName>yunpian-csharp-sdk</AssemblyName>-->
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <PackageId>Yunpian.Sdk</PackageId>
     <PackageVersion>0.0.2</PackageVersion>
     <Authors>dzh</Authors>
+    <Company>云片网</Company>
     <PackageLicenseUrl>https://github.com/yunpian/yunpian-csharp-sdk/blob/master/LICENSE</PackageLicenseUrl>
     <Owners>Yunpian</Owners>
-    <PackageProjectUrl>https://github.com/yunpian/yunpian-csharp-sdk</PackageProjectUrl>
-    <PackageTags>yunpian sdk</PackageTags>
+    <PackageProjectUrl>https://www.yunpian.com/</PackageProjectUrl>
+    <PackageTags>yunpian;sms</PackageTags>
     <Title>yunpian-csharp-sdk</Title>
     <Description>Yunpian C# SDK</Description>
-    <PackOnBuild>true</PackOnBuild>
     <ReleaseVersion>0.0.2</ReleaseVersion>
-    <SynchReleaseVersion>false</SynchReleaseVersion>
-    <RootNamespace>Yunpian.Sdk</RootNamespace>
+    <RepositoryType>github</RepositoryType>
+    <RepositoryUrl>https://github.com/yunpian/yunpian-csharp-sdk</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 </Project>
