@@ -13,22 +13,24 @@ namespace Yunpian.Sdk.Internal
 {
     internal class SmsScope : ISmsScope
     {
-        public YunpianOptions Options { get; }
-        public HttpClient Client { get; }
+        public ApiScopeOptions Options { get; }
+
+        private HttpClient Client => Options?.Client;
 
         public Uri UriBase { get; }
 
-        public SmsScope(YunpianOptions option, HttpClient client)
+        public SmsScope(ApiScopeOptions option)
         {
-            Options = option;
-            Client = client;
+            Options = option ?? throw new ArgumentNullException(nameof(option));
         }
 
         /// <inheritDoc />
         public async Task<SmsSingleSend> SendSingleSmsAsync(SingleSmsParameter parameter)
         {
-            var defautDic = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-            defautDic["apikey"] = Options.ApiKey;
+            var defautDic = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["apikey"] = Options.ApiKey
+            };
             var apiUrl = "https://sms.yunpian.com/v2/sms/single_send.json";
             var resultDic = DictonaryHelper.Combin(defautDic, parameter.ToDictionary(), StringComparer.OrdinalIgnoreCase);
 
@@ -39,17 +41,75 @@ namespace Yunpian.Sdk.Internal
             var json = await response.Content.ReadAsStringAsync();
 
             var model = JsonConvert.DeserializeObject<SmsSingleSend>(json);
-            if(model.Code != 0)
+            if (model.Code != 0)
             {
-                throw new SmsException(model.Msg,json);
+                throw new SmsException(model.Msg, json);
             }
             return model;
 
         }
 
-        public Task<SmsBatchSend> SendBatchSmsAsync(BatchSmsParameter parameter)
+        /// <inheritDoc />
+        public async Task<SmsBatchSend> SendBatchSmsAsync(BatchSmsParameter parameter)
         {
-            throw new NotImplementedException();
+            var defautDic = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["apikey"] = Options.ApiKey
+            };
+            var apiUrl = "https://sms.yunpian.com/v2/sms/batch_send.json";
+            var resultDic = DictonaryHelper.Combin(defautDic, parameter.ToDictionary(), StringComparer.OrdinalIgnoreCase);
+
+            var response = await Client.PostAsync(apiUrl, new FormUrlEncodedContent(resultDic));
+
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var model = JsonConvert.DeserializeObject<SmsBatchSend>(json);
+
+            return model;
+        }
+
+        /// <inheritDoc />
+        public async Task<SmsSingleSend> TmplSingleSmsSendAsync(TmplSingleSmsParameter parameter)
+        {
+            var defautDic = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["apikey"] = Options.ApiKey
+            };
+            var apiUrl = "https://sms.yunpian.com/v2/sms/tpl_single_send.json";
+            var resultDic = DictonaryHelper.Combin(defautDic, parameter.ToDictionary(), StringComparer.OrdinalIgnoreCase);
+
+            var response = await Client.PostAsync(apiUrl, new FormUrlEncodedContent(resultDic));
+
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var model = JsonConvert.DeserializeObject<SmsSingleSend>(json);
+
+            return model;
+        }
+
+        /// <inheritDoc />
+        public async Task<SmsBatchSend> TmplBatchSmsSendAsync(TmplBatchSmsParameter parameter)
+        {
+            var defautDic = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["apikey"] = Options.ApiKey
+            };
+            var apiUrl = "https://sms.yunpian.com/v2/sms/tpl_batch_send.json";
+            var resultDic = DictonaryHelper.Combin(defautDic, parameter.ToDictionary(), StringComparer.OrdinalIgnoreCase);
+
+            var response = await Client.PostAsync(apiUrl, new FormUrlEncodedContent(resultDic));
+
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var model = JsonConvert.DeserializeObject<SmsBatchSend>(json);
+
+            return model;
         }
     }
 }

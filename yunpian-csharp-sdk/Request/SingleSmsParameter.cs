@@ -5,7 +5,7 @@ using System.Text;
 namespace Yunpian.Sdk.Request
 {
     /// <summary>
-    /// 单挑短信参数
+    /// 单条短信参数
     /// </summary>
     public class SingleSmsParameter : BaseParameter
     {

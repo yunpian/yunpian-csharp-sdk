@@ -15,7 +15,7 @@ namespace Yunpian.Sdk
         /// <returns></returns>
         public static ISmsScope CreateSmsScope(this ConnectionFactory factory)
         {
-            return factory.CreateScope((option, client) => new SmsScope(option,client));
+            return factory.CreateScope((option) => new SmsScope(option));
         }
     }
 }

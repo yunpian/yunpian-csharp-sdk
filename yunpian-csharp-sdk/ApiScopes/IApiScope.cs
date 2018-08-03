@@ -7,7 +7,6 @@ namespace Yunpian.Sdk.ApiScopes
 {
     public interface IApiScope
     {
-        YunpianOptions Options { get; }
-        HttpClient Client { get; }
+        ApiScopeOptions Options { get; }
     }
 }

@@ -5,14 +5,14 @@ using System.Text;
 namespace Yunpian.Sdk.Request
 {
     /// <summary>
-    /// 单挑短信参数
+    /// 批量（多条）短信参数
     /// </summary>
     public class BatchSmsParameter : BaseParameter
     {
         /// <summary>
         /// 接收的手机号，仅支持单号码发送
         /// </summary>
-        public ICollection<string> Mobile { get; set; }
+        public ICollection<string> Mobile { get; set; } = new List<string>();
 
         /// <summary>
         /// 已审核短信模板
